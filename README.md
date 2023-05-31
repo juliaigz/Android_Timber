@@ -1,10 +1,12 @@
 # Android_Timber (logs)
-###This a project in android studio made in Java, the purpose is to use Timber to facilitate the use of the logs 
+### This a project in android studio made in Java, the purpose is to use Timber to facilitate the use of the logs 
 
 Introduction
+
 Logging is an essential aspect of Android development, providing valuable insights and debugging information during the development and maintenance of applications. However, managing logs effectively can be a challenging task. To streamline this process, Android_Timber leverages the Timber library to enhance and simplify logging in Android applications.
 
 Features
+
 Android_Timber offers the following features to facilitate logging:
 
 1. Easy Integration
@@ -21,3 +23,52 @@ Android_Timber allows you to customize the log format to match your preferences.
 
 5. Tag Management
 Android_Timber simplifies tag management by automatically generating tags based on the calling class, method, and line number. This eliminates the need for manual tag creation, reducing the chances of errors and inconsistencies in your logging.
+
+You can Check the java code here:
+
+```bash
+public class MainActivity extends AppCompatActivity {
+    ImageView image1;
+    ImageView image2;
+    ImageView image3;
+    ImageView image4;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Timber.d("Activity Iniciated");        
+    }
+    
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Timber.d("Activity resumed");
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Timber.d("Activity paused");
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Timber.d("Activity started");
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Timber.d("Activity stopped");
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Timber.d("Activity Destroyed");
+    }
+}
+```
+
+You can check the logs here: 
+
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/16aff680-c0b5-48b6-882c-897c36586fbf)
