@@ -1,4 +1,4 @@
-# Android_Timber (logs)
+# Android_Timber (logs)  / widgets 
 ### This a project in android studio made in Java, the purpose is to use Timber to facilitate the use of the logs 
 
 Introduction
