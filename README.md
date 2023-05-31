@@ -1,5 +1,6 @@
 # Android_Timber (logs)  / widgets 
 ### This a project in android studio made in Java, the purpose is to use Timber to facilitate the use of the logs 
+### The second part of the exercise will be to create an app that shows 4 images and then when clicking one of them It will show a second screen where it show the image in big and 2 buttons , one to go back , and the other one to cloese the app. 
 
 Introduction
 
@@ -93,6 +94,134 @@ When we run the application we can check the logs in the Logcat;  You can check 
 
 
 # WIDGETS
+# Second part of the exercise
 
-![image](https://github.com/juliaigz/Android_Timber/assets/40221707/5aee5723-b042-4ad2-845c-cea999d4c97e)
+This exercise is about to create an app that shows 4 images and then when clicking one of them It will show a second screen where it show the image in big and 2 buttons , one to go back , and the other one to cloese the app. 
+
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/5aee5723-b042-4ad2-845c-cea999d4c97e)  
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/2a838920-4feb-4fd2-931a-24f54966f82d)
+
+First Step 
+
+Lets modify the MainActivity.class 
+
+```bash
+public class MainActivity extends AppCompatActivity {
+    ImageView image1;
+    ImageView image2;
+    ImageView image3;
+    ImageView image4;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        image1 = (ImageView) findViewById(R.id.image1);
+        image2 = (ImageView) findViewById(R.id.image2);
+        image3 = (ImageView) findViewById(R.id.image3);
+        image4 = (ImageView) findViewById(R.id.image4);
+
+        Timber.d("Activity Iniciated");
+        image1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               callActivity2(""+ R.drawable.baseline_brightness_4_24);
+            }
+        });
+
+        image2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callActivity2(""+ R.drawable.baseline_coffee_24);
+            }
+        });
+
+        image3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callActivity2(""+ R.drawable.baseline_airplanemode_active_24);
+            }
+        });
+
+        image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callActivity2(""+ R.drawable.baseline_brightness_7_24);
+            }
+        });
+    }
+    protected void callActivity2(String image){
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        intent.putExtra("imageX",image);
+        startActivity(intent);
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Timber.d("Activity resumed");
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Timber.d("Activity paused");
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Timber.d("Activity started");
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Timber.d("Activity stopped");
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Timber.d("Activity Destroyed");
+    }
+}
+```
+
+Second Step 
+```bash 
+public class MainActivity2 extends AppCompatActivity {
+    ImageView imageFinal;
+    Button buttonBack;
+    Button buttonClose;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        Intent intent = getIntent();
+
+        int idImage =Integer.parseInt(intent.getStringExtra("imageX"));
+        imageFinal=(ImageView) findViewById(R.id.imageFinal);
+        buttonBack=(Button) findViewById(R.id.buttonBack);
+        buttonClose=(Button) findViewById(R.id.buttonClose);
+
+        imageFinal.setImageResource(idImage);
+
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(back);
+            }
+        });
+
+        buttonClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finishAffinity();
+            }
+        });
+    }
+}
+```
 
