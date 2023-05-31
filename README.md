@@ -24,8 +24,18 @@ Android_Timber allows you to customize the log format to match your preferences.
 5. Tag Management
 Android_Timber simplifies tag management by automatically generating tags based on the calling class, method, and line number. This eliminates the need for manual tag creation, reducing the chances of errors and inconsistencies in your logging.
 
-You can Check the java code here using TImber:
 
+
+First, I had to make the implementatio of Timber in the dependency which is located in Build.graddle(module:app)
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/603fc75a-a09b-4f78-9d6f-25bdace01d0e)
+
+
+Second lets create the class Timber
+
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/7df5bde6-af00-42fa-a9da-9f8c46e52535)
+
+
+You can Check the java code in the MainActivity using TImber:
 ```bash
 public class MainActivity extends AppCompatActivity {
     ImageView image1;
@@ -69,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
-Additional to this, I had to make the implementatio of Timber in the dependency which is located in Build.graddle(module:app)
-![image](https://github.com/juliaigz/Android_Timber/assets/40221707/603fc75a-a09b-4f78-9d6f-25bdace01d0e)
 
 Finally to implement Timber is mandatory to modify the Manifes Folder, in the Application we have to put this code:
 ```bash
