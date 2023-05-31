@@ -81,3 +81,10 @@ Finally to implement Timber is mandatory to modify the Manifes Folder, in the Ap
 When we run the application we can check the logs in the Logcat;  You can check the logs in ths image: 
 
 ![image](https://github.com/juliaigz/Android_Timber/assets/40221707/16aff680-c0b5-48b6-882c-897c36586fbf)
+
+
+
+# WIDGETS
+
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/5aee5723-b042-4ad2-845c-cea999d4c97e)
+
