@@ -96,7 +96,8 @@ When we run the application we can check the logs in the Logcat;  You can check 
 
 This exercise is about to create an app that shows 4 images and then when clicking one of them It will show a second screen where it show the image in big and 2 buttons , one to go back , and the other one to cloese the app. 
 
-![image](https://github.com/juliaigz/Android_Timber/assets/40221707/5aee5723-b042-4ad2-845c-cea999d4c97e)  
+![image](https://github.com/juliaigz/Android_Timber/assets/40221707/2da43266-9d22-41a0-bcf9-2179bc3fa80d)
+
 ![image](https://github.com/juliaigz/Android_Timber/assets/40221707/2a838920-4feb-4fd2-931a-24f54966f82d)
 
 First Step 
